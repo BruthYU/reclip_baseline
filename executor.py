@@ -102,6 +102,8 @@ class Executor:
         else:
             imgs = [[] for _ in self.models]
         text_tensor = self.preprocess_text(caption.lower()).to(self.device)
+        # imgs = [x.to(torch.float16) for x in imgs]
+        # text_tensor = text_tensor.to(torch.float16)
         return imgs, text_tensor
 
     @torch.no_grad()

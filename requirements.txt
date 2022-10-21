@@ -52,3 +52,17 @@ urllib3==1.26.6
 wasabi==0.8.2
 wcwidth==0.2.5
 Werkzeug==2.0.1
+
+python main.py --input_file /home/yu/dataset/reclip/reclip_data/refcocog_test.jsonl --image_root /home/yu/dataset/reclip/train2014/ --method parse --gradcam_alpha 0.5 0.5 --box_method_aggregator sum
+--clip_model ViT-B/32 --output_file /home/yu/dataset/reclip/output/output.jsonl
+{--albef_path albef --albef_mode itm/itc --albef_block_num 8/11}
+{--mdetr mdetr_efficientnetB3/mdetr_efficientnetB3_refcocoplus/mdetr_effcientnetB3_refcocog}
+{--box_representation_method crop,blur/crop/blur/shade}
+{--detector_file PATH_TO_DETECTOR_FILE}
+{--cache_path PATH_TO_CACHE_DIRECTORY}
+{--output_file PATH_TO_OUTPUT_FILE}
+
+
+Choices for method: "parse" is the full version of ReCLIP that includes isolated proposal scoring and the heuristic-based relation handling system.
+"baseline" is the version of ReCLIP using only isolated proposal scoring.
+"gradcam" uses GradCAM, and "random" selects one of the proposals uniformly at random. (default: "parse")
